@@ -13,5 +13,6 @@ permissions:
 hooks:
   BeforeInstall:
   AfterInstall:
-    - location: /home/ec2-user/rdscicd
-      timeout: 180
+    - location: /dbcicd.sh
+      timeout: 40
+      runas: ec2-user
