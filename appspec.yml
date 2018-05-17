@@ -13,5 +13,5 @@ permissions:
 hooks:
   BeforeInstall:
   AfterInstall:
-    - location: deployment-script/dbcicd.sh
+    - location: /home/ec2-user/rdscicd
       timeout: 180
