@@ -1,15 +1,15 @@
 version: 0.0
 os: linux
 files:
-    - source: source
-        destination: /home/ec2-user/rdscicd
+  - source: source
+    destination: /home/ec2-user/rdscicd
 permissions:
-    - object: /home/ec2-user/rdscicd
-        owner: ec2-user
-        group: ec2-user
-        mode: 755
-        type:
-          - directory
+  - object: /home/ec2-user/rdscicd
+    owner: ec2-user
+    group: ec2-user
+    mode: 755
+    type:
+      - directory
 hooks:
   BeforeInstall:
   AfterInstall:
