@@ -10,8 +10,13 @@ permissions:
     mode: 755
     type:
       - directory
+  - object: /home/ec2-user/rdscicd
+    owner: ec2-user
+    group: ec2-user
+    mode: 755
+    type:
+      - file
 hooks:
-  BeforeInstall:
   AfterInstall:
     - location: /dbcicd.sh
       timeout: 40
