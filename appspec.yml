@@ -18,6 +18,6 @@ permissions:
       - file
 hooks:
   AfterInstall:
-    - location: /dbcicd.sh
+    - location: /invoke-cicd.sh
       timeout: 40
       runas: ec2-user
