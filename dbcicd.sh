@@ -14,6 +14,7 @@ errCount=$(tr -s ' ' '\n' < db_creation_error_log.log | grep ERROR | wc -l)
 if [ $errCount -gt 0 ]
 then
    echo "Error occurred while creating database and schema."
+   cat db_creation_error_log.log
    exit -1
 fi
 
@@ -24,6 +25,7 @@ errCount=$(tr -s ' ' '\n' < table_creation_error_log.log | grep ERROR | wc -l)
 if [ $errCount -gt 0 ]
 then
    echo "Error occurred while creating tables."
+   cat table_creation_error_log.log
    exit -1
 fi
 
@@ -34,5 +36,6 @@ errCount=$(tr -s ' ' '\n' < object_creation_error_log.log | grep ERROR | wc -l)
 if [ $errCount -gt 0 ]
 then
     echo "Error occurred while creating objects."
+   cat object_creation_error_log.log
     exit -1
 fi
