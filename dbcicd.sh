@@ -1,6 +1,10 @@
 #!/bin/bash
 export /usr/bin/psql
 
+rm -rf /home/ec2-user/rdscicd/deployment-script/db_creation_error_log.log
+rm -rf /home/ec2-user/rdscicd/deployment-script/table_creation_error_log.log
+rm -rf /home/ec2-user/rdscicd/deployment-script/object_creation_error_log.log
+
 cd deployment-script
 
 echo "Invoking db creation script"
