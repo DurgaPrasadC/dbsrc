@@ -13,6 +13,7 @@ sleep 5
 errCount=$(tr -s ' ' '\n' < db_creation_error_log.log | grep ERROR | wc -l)
 if [ $errCount -gt 0 ]
 then
+   echo "Error occurred while creating database and schema."
    exit -1
 fi
 
@@ -22,6 +23,7 @@ sleep 5
 errCount=$(tr -s ' ' '\n' < table_creation_error_log.log | grep ERROR | wc -l)
 if [ $errCount -gt 0 ]
 then
+   echo "Error occurred while creating tables."
    exit -1
 fi
 
@@ -31,5 +33,6 @@ sleep 5
 errCount=$(tr -s ' ' '\n' < object_creation_error_log.log | grep ERROR | wc -l)
 if [ $errCount -gt 0 ]
 then
-   exit -1
+    echo "Error occurred while creating objects."
+    exit -1
 fi
