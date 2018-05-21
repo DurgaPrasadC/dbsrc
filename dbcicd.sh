@@ -5,7 +5,7 @@ rm -rf /home/ec2-user/rdscicd/deployment-script/db_creation_error_log.log
 rm -rf /home/ec2-user/rdscicd/deployment-script/table_creation_error_log.log
 rm -rf /home/ec2-user/rdscicd/deployment-script/object_creation_error_log.log
 
-cd deployment-script
+cd /home/ec2-user/rdscicd/deployment-script
 
 echo "Invoking db creation script"
 python database_creation.py
