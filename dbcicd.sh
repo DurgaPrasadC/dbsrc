@@ -10,11 +10,26 @@ cd deployment-script
 echo "Invoking db creation script"
 python database_creation.py
 sleep 5
+errCount=$(tr -s ' ' '\n' < db_creation_error_log.log | grep ERROR | wc -l)
+if [ $errCount -gt 0 ]
+then
+   exit -1
+fi
 
 echo "Invoking table creation script"
 python table_creation.py
 sleep 5
+errCount=$(tr -s ' ' '\n' < table_creation_error_log.log | grep ERROR | wc -l)
+if [ $errCount -gt 0 ]
+then
+   exit -1
+fi
 
 echo "Invoking object creation script"
 python object_creation.py
 sleep 5
+errCount=$(tr -s ' ' '\n' < object_creation_error_log.log | grep ERROR | wc -l)
+if [ $errCount -gt 0 ]
+then
+   exit -1
+fi
