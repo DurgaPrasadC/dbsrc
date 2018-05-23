@@ -36,6 +36,6 @@ errCount=$(tr -s ' ' '\n' < object_creation_error_log.log | grep ERROR | wc -l)
 if [ $errCount -gt 0 ]
 then
     echo "Error occurred while creating objects."
-   cat object_creation_error_log.log
+    cat object_creation_error_log.log
     exit -1
 fi
