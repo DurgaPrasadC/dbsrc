@@ -4,7 +4,6 @@ import time
 import datetime
 import ConfigParser
 
-
 configParser = ConfigParser.RawConfigParser()
 configFilePath = 'config_properties.properties'
 configParser.read(configFilePath)
