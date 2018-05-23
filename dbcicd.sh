@@ -7,7 +7,7 @@ rm -rf /home/ec2-user/rdscicd/deployment-script/object_creation_error_log.log
 
 cd /home/ec2-user/rdscicd/deployment-script
 
-echo "Invoking db creation script"
+echo "Invoking db creation script."
 python database_creation.py
 sleep 5
 errCount=$(tr -s ' ' '\n' < db_creation_error_log.log | grep ERROR | wc -l)
@@ -29,7 +29,7 @@ then
    exit -1
 fi
 
-echo "Invoking object creation script"
+echo "Invoking object creation script."
 python object_creation.py
 sleep 5
 errCount=$(tr -s ' ' '\n' < object_creation_error_log.log | grep ERROR | wc -l)
