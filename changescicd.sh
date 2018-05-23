@@ -3,6 +3,7 @@
 export /usr/bin/psql
 cd /home/ec2-user/gitsrc/dbsrc
 cat /dev/null > changescicd_error_log.log
+date >> changescicd_error_log.log
 git pull
 files=`git diff --name-only HEAD@{0} HEAD@{1} | grep .sql`
 for file in $files; do
