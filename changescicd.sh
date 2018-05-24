@@ -1,6 +1,5 @@
 #!/bin/bash
 
-export /usr/bin/psql
 cd /home/ec2-user/gitsrc/dbsrc
 cat /dev/null > changescicd_error_log.log
 date >> changescicd_error_log.log
@@ -17,4 +16,3 @@ then
    cat changescicd_error_log.log
    exit -1
 fi
-
