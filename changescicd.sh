@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export PGPASSWORD=testdb
 cd /home/ec2-user/gitsrc/dbsrc
 
 cat /dev/null > changescicd_error_log.log
